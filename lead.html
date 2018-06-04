@@ -1,0 +1,106 @@
+<div id="lead" ng-controller="userCtrl">
+<form class="form-inline" >
+    <div class="form-group">
+     <!--  <label for="email">Email:</label> -->
+      <input type="text" class="form-control" id="name" placeholder="Name" name="Name">
+    </div>
+    <div class="form-group">
+     <!--  <label for="pwd">Password:</label> -->
+     <select class="selectpicker form-control input-md" >
+  <option>Select project</option>
+  <option>project1</option>
+  <option>project2</option>
+</select>
+    </div>
+    <div class="form-group">
+        <select class="selectsource form-control input-md" >
+  <option>Select Source</option>
+  <option>source1</option>
+  <option>source2</option>
+</select>
+    </div>
+    <div class="form-group">
+       <label for="from">From:</label> 
+      <input type="date" class="form-control" id="from" placeholder="date" name="date" ng-model="fromdate">
+    </div>
+
+     <div class="form-group">
+      <label for="todate">To:</label>
+      <input type="date" class="form-control" id="todate"  name="todate" ng-model="todate">
+    </div>
+    
+    <button type="submit" class="btn btn-danger" ng-click="Datebasedfilter()">Submit</button>
+    <button  class="btn btn-danger">Reset</button>
+  </form>
+
+ <!--  {{weburl}}<br>
+  {{urlhost}}<br>
+  {{urlport}}<br>
+  {{urlprotocol}}<br> -->
+
+ <div class="table-responsive"  >
+  <table id="tabletoexcel" class="table  no-margin">
+    <thead>
+      <tr>
+       <!--  <th style="width:40%">Name</th> -->
+        <th  class="hidden-phone">S.N.</th>
+        <th  class="hidden-phone text-center">Name</th>
+     
+        <th  class="hidden-phone">Email</th>
+        <th  class="hidden-phone">Mobile</th>
+        <th  class="hidden-phone">State</th>
+           <th  class="hidden-phone">City</th>
+          <th  class="hidden-phone">Country</th>
+
+        <th  class="hidden-phone">Project</th>
+        
+        <th  class="hidden-phone">Source</th>
+        <th  class="hidden-phone">Date</th>
+        <th  class="hidden-phone">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr ng-repeat="u in details">
+       
+        
+            <td style="padding-left: 8px;"><input type="checkbox" ng-model="data.isDelete"/>{{$index}}</td>
+        
+        <td  class="text-center">
+          <span class="name">{{u.u_name}}</span>
+        </td>
+       <!--  <td class="hidden-phone">goencainc</td> -->
+        <td class="hidden-phone text-center" >
+          <span class="label label label-info"><!-- abc@gmail.com -->{{u.u_email}}</span>
+        </td>
+        <td class="hidden-phone">{{u.u_mobile}}</td>
+        <td class="hidden-phone">{{u.state}}</td>
+      
+        <td class="hidden-phone">{{u.city}}</td>
+        <td class="hidden-phone">{{u.country}}</td>
+          <td class="hidden-phone">{{path}}</td>
+          <td>{{queryStringsrc}}</td>
+          <td>{{u.createdAt}}</td>
+
+        <td class="hidden-phone">
+          <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-xs dropdown-toggle" data-original-title="" title="">
+              Action 
+              <span class="caret">
+              </span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="#">Edit</a>
+              </li>
+              <li>
+                <button ng-click="remove(u.id)">remove</button>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+ 
+    </tbody>
+  </table>
+</div>
+</div>

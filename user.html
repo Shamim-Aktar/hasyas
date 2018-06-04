@@ -1,0 +1,177 @@
+ <div class="table-responsive" id="user" ng-controller="myCtrl" >
+  <table class="table   no-margin">
+    <thead >
+      <tr>
+       
+       <!--  <th style="width:40%">Name</th> -->
+        <th  class="hidden-phone">S.N.</th>
+        <th  class="hidden-phone text-center" style="width:9%">Name</th>
+        <th  class="hidden-phone text-center" style="width:11.8%">User Name</th>
+        <th  class="hidden-phone text-center" style="width:11.8%">Email</th>
+        <th  class="hidden-phone text-center" style="width:10%">Mobile Nmber</th>
+        <th  class="hidden-phone text-center" style="width:11.8%">Company</th>
+        <th  class="hidden-phone text-center" style="width:11.8%">Project</th>
+        <th  class="hidden-phone text-center" style="width:11.8%">State</th>
+        <th  class="hidden-phone text-center" style="width:10.8%">Country</th>
+        <th  class="hidden-phone" style="width:7%">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat=" u in details">
+        <td style="padding: 6px 6px 6px 10px;">
+          <input class="no-margin" type="checkbox">
+          <span style="position: relative; bottom: 2px">{{$index}}</span>
+        </td>
+        <td  class="text-center" style="width: 9%">
+          <span class="name"><!-- Goenca -->{{u.u_name}}</span>
+        </td>
+        <td class="hidden-phone text-center" style="width: 11.8%">goencainc</td>
+        <td class="hidden-phone text-center" style="width: 11.8%">
+          <span class="label label label-info" ><!-- abc@gmail.com -->{{u.u_email}}</span>
+        </td>
+        <td class="hidden-phone text-center" style="width: 10%"><!-- admin -->{{u.u_mobile}}</td>
+        <td class="hidden-phone text-center" style="width: 11.8%">Hyas</td>
+        <td class="hidden-phone text-center" style="width: 11.8%"><!-- Project name -->{{path}}</td>
+        <td class="hidden-phone text-center" style="width: 11.8%"><!-- All -->{{u.state}}</td>
+        <td class="hidden-phone text-center" style="width: 10.8%" ><!-- India --> {{u.country}}</td>
+        <td class="hidden-phone" style=" width: 7.05%; padding: 5.5px;">
+          <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-xs dropdown-toggle" data-original-title="" title="">
+              Action 
+              <span class="caret">
+              </span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="#">Edit</a>
+              </li>
+              <li>
+                <a href="#">Delete</a>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    <!--   <tr>
+        <td>
+          <input class="no-margin" type="checkbox">
+        </td>
+        <td>
+          <span class="name">Michel Clark</span>
+        </td>
+        <td class="hidden-phone">Wilson #343</td>
+        <td class="hidden-phone">
+          <span class="label label label-success">New</span>
+        </td>
+        <td class="hidden-phone">10 - 10 - 2013</td>
+        <td class="hidden-phone">
+          <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-xs dropdown-toggle" data-original-title="" title="">
+              Action 
+              <span class="caret">
+              </span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="#">Edit</a>
+              </li>
+              <li>
+                <a href="#">Delete</a>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr> -->
+     <!--  <tr>
+        <td>
+          <input class="no-margin" type="checkbox">
+        </td>
+        <td>
+          <span class="name">Rahul David</span>
+        </td>
+        <td class="hidden-phone">Mako #643</td>
+        <td class="hidden-phone">
+          <span class="label label label-danger">New</span>
+        </td>
+        <td class="hidden-phone">14 - 10 - 2014</td>
+        <td class="hidden-phone">
+          <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-xs dropdown-toggle" data-original-title="" title="">
+              Action 
+              <span class="caret">
+              </span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="#">Edit</a>
+              </li>
+              <li>
+                <a href="#">Delete</a>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr> -->
+     <!--  <tr>
+        <td>
+          <input class="no-margin" type="checkbox">
+        </td>
+        <td>
+          <span class="name">Anthony Michell</span>
+        </td>
+        <td class="hidden-phone">Mako #5432</td>
+        <td class="hidden-phone">
+          <span class="label label label-info">New</span>
+        </td>
+        <td class="hidden-phone">19 - 11 - 2014</td>
+        <td class="hidden-phone">
+          <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-xs dropdown-toggle" data-original-title="" title="">
+              Action 
+              <span class="caret">
+              </span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="#">Edit</a>
+              </li>
+              <li>
+                <a href="#">Delete</a>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr> -->
+     <!--  <tr>
+        <td>
+          <input class="no-margin" type="checkbox">
+        </td>
+        <td>
+          <span class="name">Mark Phillips</span>
+        </td>
+        <td class="hidden-phone">Phill #999</td>
+        <td class="hidden-phone">
+          <span class="label label label-success">New</span>
+        </td>
+        <td class="hidden-phone">12 - 11 - 2015</td>
+        <td class="hidden-phone">
+          <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-xs dropdown-toggle" data-original-title="" title="">
+              Action 
+              <span class="caret">
+              </span>
+            </button>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="#">Edit</a>
+              </li>
+              <li>
+                <a href="#">Delete</a>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,50 @@
+ <div id="projectdetails" ng-controller="userCtrl">
+
+    <div class="row">
+ <div class="col-md-6">
+  <div class="form-group searchform ">
+     <label for="search-box" id="search" >Search</label>
+  <input type="text" id="search-box">
+</div>
+</div>
+
+ <div class="col-md-4">
+  <div class="form-group numbox">
+     <label for="num-box" id="numbox" >per page</label>
+  <input type="number" id="num-box" placeholder="25">
+</div>
+</div>
+
+ <div class="col-md-2 pull-right">
+  
+    
+  <button type="submit" class="btn btn-danger">Create project</button>
+</div>
+</div>
+
+        
+  <table class="table table=bordered">
+    <thead>
+      <tr>
+        <th class="col-md-1 text-center">S.N.</th>
+        <th class="col-md-2 text-center" >Project name</th>
+        <th class="col-md-3 text-center">Project Url</th>
+        <th class="col-md-2 text-center" >Client name</th>
+       <!--  <th>Action</th> -->
+       <!--  <th></th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="prd in details">
+        <td class="col-md-1 text-center">{{$index}}
+        <td class="col-md-2 text-center">{{path}}</td>
+        <td class="col-md-3 text-center"><span>{{weburl}}</span></td>
+        <td class="col-md-2 text-center">{{prd.u_name}}</td>
+        <!-- <td>35</td>
+        <td>New York</td> -->
+       
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

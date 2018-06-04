@@ -1,0 +1,157 @@
+
+
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  overflow-x:hidden;
+}
+
+.navbar{
+  border-radius:0 !important;
+  border:0 !important;
+}
+
+.top-nav{
+    padding: 6px 5px 0 0;
+}
+
+.top-nav li a{
+  display: block;
+    background: #e77171;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 10px;
+    box-shadow: 0 1px 0 #a41b1b;
+    -moz-box-shadow: 0 1px 0 #a41b1b;
+    -webkit-box-shadow: 0 1px 0 #a41b1b;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+.navbar-fixed-left{
+background:none;
+border:none;
+}
+.sidenav {
+    background: #F17153;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#F17153, #F58D63, #f1ab53);
+      height: 100%;
+    /* width: 160px; */
+    position: fixed;
+    z-index: 1;
+    top: 72px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.table>thead>tr>th {
+   
+    border-bottom: 0 !important;
+  }
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+ 
+    color: #ffffff;
+    display: block;
+    font-size:15px;
+    font-weight:700;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.well {
+  
+     margin-bottom: 0!important; 
+     height:100px!important;
+  
+}
+
+.well h4{
+position: relative;
+    top: 1em;
+        margin-top: 0;
+    margin-bottom: 0;
+}
+
+.nav>li>a:focus, .nav>li>a:hover{
+   display: block;
+    background: #e77171 !important;
+    color: #fff !important;
+}
+
+
+.red{
+    color:red;
+    }
+.form-area
+{
+    background-color: #FAFAFA;
+	padding: 10px 40px 60px;
+	margin: 10px 0px 60px;
+	border: 1px solid GREY;
+	}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-brand{
+  padding:0 0 !important;
+  margin-left:0 !important;
+}
+
+.navbar-brand img{
+  height:78px;
+}
+
+  .affix {
+      top: 20px;
+      z-index: 9999 !important;
+  }
+
+.table-responsive{
+     overflow: unset!important;
+    padding-top: 1em;
+}
+  table>tbody>tr>td, table>thead>tr>th {
+    /*display: inline-block;*/
+    border:1px solid !important;
+    text-align:center;
+    vertical-align:middle !important;
+  }
+  #search-box{
+        width: 60%;
+    height: 30px;
+    float: right;
+  }
+
+ #num-box {
+    width: 60%;
+    float: left;
+      height: 30px;
+  }
+
+#numbox{
+  float:left;
+  padding-right: 1em;
+    padding-top: 5px;
+
+}
+  .searchform, .numbox   {
+        text-align:right;
+  }
+
+  #search{
+         padding-right: 1em;
+    padding-top: 5px;
+  }
