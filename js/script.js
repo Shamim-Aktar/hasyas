@@ -41,15 +41,15 @@ app.controller("myCtrl", function($scope, $http, $location) {
 
   /*var queryString = url.substring( url.indexOf('?')+1 )*/ 
   $scope.curdate=new Date();
-  console.log( $scope.curdate)
+  // console.log( $scope.curdate)
   $scope.queryStringsrc = url.match(
     new RegExp("=(.*?)($|&)", "i")
   )[1];
-  console.log($scope.queryStringsrc);
+  // console.log($scope.queryStringsrc);
   /*alert(queryString)*/
   $scope.urlprotocol = $location.protocol();
-  console.log($scope.weburl);
-  console.log($scope.urlport);
+  // console.log($scope.weburl);
+  // console.log($scope.urlport);
 
   $scope.insertData = function() {
     $http.post("information.php", {
@@ -64,9 +64,9 @@ app.controller("myCtrl", function($scope, $http, $location) {
         createdAt:$scope.curdate
       })
       .then(function(data) {
-        console.log(data);
+        // console.log(data);
 
-        console.log($scope.user);
+        // console.log($scope.user);
       });
   };
 });
@@ -82,15 +82,15 @@ app.controller("RegisterCtrl", function($scope, $http) {
         password: $scope.password
       })
       .then(function(data) {
-        console.log($scope.username);
-        console.log(data);
+        // console.log($scope.username);
+        // console.log(data);
         $scope.username = "";
         $scope.useremail = "";
 
         $scope.password = "";
 
         $scope.userdata = data.data;
-        console.log($scope.userdata);
+        // console.log($scope.userdata);
       });
   };
 });
@@ -107,6 +107,7 @@ app.controller("userCtrl", [
     $scope.projectname = $scope.weburl;
     $scope.urlhost = $location.host();
     $scope.urlport = $location.port();
+    $scope.dateFilter = false;
     /*$scope.source=$location.search();*/
 
     var url =
@@ -115,28 +116,33 @@ app.controller("userCtrl", [
     /*var queryString = url.substring( url.indexOf('?')+1 )*/ $scope.queryStringsrc = url.match(
       new RegExp("=(.*?)($|&)", "i")
     )[1];
-    console.log($scope.queryStringsrc);
+    // console.log($scope.queryStringsrc);
     /*alert(queryString)*/
 
     $scope.urlprotocol = $location.protocol();
-    console.log($scope.weburl);
-    console.log($scope.urlport);
+    // console.log($scope.weburl);
+    // console.log($scope.urlport);
 
     $http.get("detail.php").then(function(response) {
       $scope.details = response.data;
-      console.log($scope.details);
+      // console.log($scope.details);
     });
 
 
-      $scope.Datebasedfilter=function(){
-
-        var list=[];
-        var date;
-        date=$scope.fromdate;
-        while( date<=$scope.todate){
-           list.push(date);
-    date = date.add(Date.DAY, 1);
+      $scope.Datebasedfilter = function(start_date, end_date){
+        var details = angular.copy($scope.details);
+        var startDate = start_date.getTime()+19800000,endDate = end_date.getTime()+19800000;
+        if(startDate <= endDate) {
+          $scope.dateFilter = true;
+          end_date = end_date ? end_date : new Date();
+          $scope.filteredDetails = details.filter((item)=>{
+            var createdDate = new Date(item.createdAt).getTime();
+            return createdDate >= startDate && createdDate <= endDate;
+          });
+        }else {
+          alert("End date should be grater than start date");
         }
+        
       }
 
 
@@ -144,7 +150,7 @@ app.controller("userCtrl", [
     $scope.remove = function(id) {
       for (i in $scope.details) {
         if ($scope.details[i].id == id) {
-          console.log(i);
+          // console.log(i);
           $scope.details.splice(i+1, 1);
         }
       }
@@ -167,17 +173,17 @@ app.controller("userCtrl", [
 
           var start_date=(start_date && !isNaN(Date.parse(start_date)))?Date.parse(start_date):0
           var end_date=(end_date && !isNaN(Date.parse(end_date)))?Date.parse(start_date):new Date().getTime();
-          console.log(details, start_date, end_date); 
+          // console.log(details, start_date, end_date); 
 
           if(details && details.length>0){
             $.each(details, function(index, details){
                 var detailDate=new Date(details.createdAt).getTime();
 
-                console.log('detailDate', detailDate, detailDate >= start_date, detailDate <= end_date);
+                // console.log('detailDate', detailDate, detailDate >= start_date, detailDate <= end_date);
             
 
                     if (detailDate >= start_date && detailDate <= end_date) {
-                           console.log('details', details);  
+                          //  console.log('details', details);  
                          result.push(details);
                       }
 
@@ -205,11 +211,11 @@ app.run(function($rootScope, $location, loginService) {
   $rootScope.$on("$routeChangeStart", function(event) {
     /* event.preventDefault();*/
 
-    console.log(routePermit);
+    // console.log(routePermit);
     if (routePermit.indexOf($location.path()) != -1) {
       var connected = loginService.islogged();
       connected.then(function(response) {
-        console.log(response);
+        // console.log(response);
         if (!response.data) {
           $location.path("/");
         }
